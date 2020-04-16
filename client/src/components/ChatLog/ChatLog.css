@@ -1,0 +1,12 @@
+/* https://yoksel.github.io/flex-cheatsheet/ */
+/*
+Was having issues with nesting material-ui Grid's, had to find my own solution
+*/
+.ChatRoomContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.ChatLog {
+    flex-grow: 1;
+}
