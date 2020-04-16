@@ -48,7 +48,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        App.socket = io();
+        App.socket = io("http://localhost:4000/");
         App.socket.on(SocketEvents.Connection, () => {
             console.log('Connected')
             App.socket.on(SocketEvents.GetProfileResponse, (profile) => {
@@ -156,7 +156,7 @@ class App extends React.Component {
 
     onOpenEventDialog() {
         axios.get(
-            '/api/events'
+            'http://localhost:4000/api/events'
         ).then(e => {
             console.log(e);
             this.setState({
@@ -195,7 +195,7 @@ class App extends React.Component {
 
     onRoomAdded(room) {
         axios.post(
-            '/api/rooms',
+            'http://localhost:4000/api/rooms',
             room,
         ).then(e => {
             console.log(e);
@@ -206,7 +206,7 @@ class App extends React.Component {
     onRoomEdited(room) {
         console.log(room);
         axios.put(
-            '/api/rooms',
+            'http://localhost:4000/api/rooms',
             {
                 id: room._id,
                 room: {
@@ -222,7 +222,7 @@ class App extends React.Component {
     }
     onRoomDeleted(room) {
         axios.delete(
-            `/api/rooms/${room}`,
+            `http://localhost:4000/api/rooms/${room}`,
             {
                 id: room,
             },

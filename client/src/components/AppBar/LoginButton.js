@@ -39,7 +39,7 @@ export class LoginButton extends Component {
     handleSubmit() {
         this.handleCloseDialog();
         axios.post(
-            '/api/login',
+            'http://localhost:4000/api/login',
             {
                 username: this.state.inputUsername,
                 password: this.state.inputPassword
